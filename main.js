@@ -2,9 +2,11 @@ const {app,BrowserWindow} = require('electron')
 
 const path=require('path')
 
+
 const {autoUpdater} = require('electron-updater')
 const log = require('electron-log')
-log.transports.file.resolvePath=() => path.join("D:/code/auto-update-electron", 'logs/main.log');
+log.transports.file.resolvePathFn=() => path.join("D:/code/auto-update-electron", 'logs/main.log');
+
 
 log.info("Hello, log");
 log.warn("some problem appears");
